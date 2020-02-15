@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Test User3",
+    "title": "Junior",
+    "studio": {
+      "name": "Vancouver",
+      "region": "North America"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Test User3",
+    "title": "Junior",
+    "studio": {
+      "name": "Vancouver",
+      "region": "North America"
+    }
+  },
+  {
+    "id": 3,
+    "name": "Test User4",
+    "title": "Junior",
+    "studio": {
+      "name": "Vancouver",
+      "region": "North America"
+    }
+  },
+  {
+    "id": 4,
+    "name": "Test User5",
+    "title": "Junior",
+    "studio": {
+      "name": "Vancouver",
+      "region": "North America"
+    }
+  }
+]
