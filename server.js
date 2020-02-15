@@ -2,7 +2,6 @@ var express = require('express');
 var graphqlHTTP = require('express-graphql');
 var { buildSchema } = require('graphql');
 const fs = require('fs');
-const _ = require('lodash');
 
 var schema = buildSchema(`
     type Query {
@@ -43,10 +42,10 @@ var schema = buildSchema(`
     }
 `)
 
-getUsersFromFile = () => {
+getFromFile = (jsonFile) => {
     let rawData = fs.readFileSync('user.json');
-    let users = JSON.parse(rawData);
-    return users;
+    let parsedData = JSON.parse(rawData);
+    return parsedData;
 }
 
 class User {
@@ -60,15 +59,13 @@ class User {
 
 var root = {
     getStudios: () => {
-        let rawData = fs.readFileSync('studio.json');
-        let studios = JSON.parse(rawData);
-        return studios;
+        return getFromFile('studio.json');
     },
     getUsers: () => {
-        return getUsersFromFile();
+        return getFromFile('user.json');
     },
     createUser: ({input}) => {
-        let existingUsers = getUsersFromFile();
+        let existingUsers = getFromFile('user.json');
         let count = existingUsers.length + 1;
         let newUser = new User(count,input);
         existingUsers.push(newUser);
